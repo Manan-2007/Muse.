@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Muse.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="player">
+        <div class="wrapper">
+            <div class="top-bar">
+                <a href="home.html" class="logo-link">
+                    <h1 class="logo"><span class="logo-red">Muse</span><span class="logo-white">.</span></h1>
+                </a>
+            </div>
+
+            <div class="content-area">
+
+                <div class="hero-section" onclick="window.location.href='player.html?track=7'">
+                    <p
+                        style="color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 5px;">
+                        Artist of the Month</p>
+                    <h1>The Weeknd</h1>
+                    <p style="color: white; font-size: 0.9rem;">Listen to the new hits.</p>
+                    <img src="images/blinding_lights.jpg" class="hero-img">
+                </div>
+
+                <h3 style="margin-left: 5px; margin-bottom: 15px;">Made For You</h3>
+                <div class="horizontal-scroll">
+                    <div class="card scroll-card" onclick="window.location.href='player.html?track=16'">
+                        <img src="images/sunflower.jpg" alt="Sunflower">
+                        <h4>Sunflower</h4>
+                        <p>Post Malone</p>
+                    </div>
+                    <div class="card scroll-card" onclick="window.location.href='player.html?track=2'">
+                        <img src="images/attention.png" alt="Attention">
+                        <h4>Attention</h4>
+                        <p>Charlie Puth</p>
+                    </div>
+                    <div class="card scroll-card" onclick="window.location.href='player.html?track=11'">
+                        <img src="images/future_nostalgia.jpg" alt="Levitating">
+                        <h4>Levitating</h4>
+                        <p>Dua Lipa</p>
+                    </div>
+                    <div class="card scroll-card" onclick="window.location.href='player.html?track=13'">
+                        <img src="images/roots.jpg" alt="Low">
+                        <h4>Low</h4>
+                        <p>Flo Rida</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h3 style="margin-left: 5px; margin-bottom: 15px;">Quick Links</h3>
+
+                    <a href="library.html" class="action-row">
+                        <i class="fas fa-list action-icon"></i>
+                        <div class="action-text">
+                            <h4>Library</h4>
+                            <p>All your songs</p>
+                        </div>
+                        <i class="fas fa-chevron-right action-arrow"></i>
+                    </a>
+
+                    <a href="playlists.html" class="action-row">
+                        <i class="fas fa-layer-group action-icon"></i>
+                        <div class="action-text">
+                            <h4>Playlists</h4>
+                            <p>Curated mixes</p>
+                        </div>
+                        <i class="fas fa-chevron-right action-arrow"></i>
+                    </a>
+                </div>
+            </div>
+
+            <nav class="nav-bar">
+                <a href="home.html" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="playlists.html" class="nav-item">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Playlists</span>
+                </a>
+                <a href="library.html" class="nav-item">
+                    <i class="fas fa-list"></i>
+                    <span>Library</span>
+                </a>
+                <a href="about.html" class="nav-item">
+                    <i class="fas fa-user-friends"></i>
+                    <span>About</span>
+                </a>
+                <a href="login.html" class="nav-item">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Login</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+</body>
+
+</html>

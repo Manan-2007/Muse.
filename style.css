@@ -1,0 +1,727 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background: #000000;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.player {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive Dashboard Container */
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c1e;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    /* For backdrop */
+}
+
+/* Blurred Backdrop Pseudo-element */
+.wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(60px) brightness(0.4);
+    z-index: -1;
+    transition: background-image 0.5s ease-in-out;
+}
+
+/* Full Screen Mode - No Fixed Dashboard */
+@media (min-width: 768px) {
+    .wrapper {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+    }
+}
+
+
+
+/* Sticky Top Bar */
+.top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+    background: #171717;
+    /* Deep solid black/gray */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 50;
+}
+
+.logo-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    /* Helps center the logo */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+.logo-red {
+    color: #fa233b;
+}
+
+.logo-white {
+    color: #fff;
+}
+
+.login-icon {
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.login-icon:hover {
+    opacity: 1;
+}
+
+/* Scrollable Content Area - Adjusted for Sticky Header */
+.content-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    padding-top: 80px;
+    /* Space for Sticky Header */
+    padding-bottom: 90px;
+    /* Space for Bottom Nav */
+}
+
+/* Hide Scrollbar */
+.content-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content-area::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+    color: white;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+p,
+span,
+div {
+    color: #98989d;
+    /* Lighter Apple Gray for better contrast on blur */
+}
+
+a {
+    color: #fa233b;
+    /* Apple Red */
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* Home Page: Hero Section */
+.hero-section {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #4c1d95, #fa233b);
+    /* Fallback / Gradient */
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: transform 0.3s;
+    z-index: 0;
+}
+
+.hero-section:hover .hero-img {
+    transform: scale(1.05);
+}
+
+.hero-section h1,
+.hero-section p {
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+/* Home Page: Horizontal Scroll */
+.horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-card {
+    min-width: 140px;
+    width: 140px;
+}
+
+/* Home Page: Action Rows */
+.action-row {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    /* Glassy look */
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    color: white;
+    /* Override default link color */
+}
+
+.action-row:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.action-icon {
+    font-size: 1.5rem;
+    color: #fa233b;
+    margin-right: 15px;
+    width: 30px;
+    text-align: center;
+}
+
+.action-text {
+    flex: 1;
+}
+
+.action-text h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: white;
+}
+
+.action-text p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #98989d;
+}
+
+.action-arrow {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Bottom Navigation */
+.nav-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(20, 20, 20, 0.85);
+    /* Darker for contrast */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #98989d;
+    font-size: 0.7rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-item i {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    color: #fa233b;
+}
+
+/* Cards & Grids */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Responsive Grid */
+    gap: 20px;
+}
+
+.card {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.card:hover img {
+    opacity: 0.8;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    /* Slightly tighter radius */
+    margin-bottom: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.2s;
+}
+
+.card h4 {
+    font-size: 0.9rem;
+    margin: 5px 0 2px 0;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card p {
+    font-size: 0.8rem;
+}
+
+/* Playlist Cards (Collage) */
+.playlist-card .playlist-art {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.playlist-card .playlist-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* List / Library */
+.song-list {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.song-list th {
+    text-align: left;
+    color: #98989d;
+    font-size: 0.75rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.song-list td {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtler divider */
+    color: white;
+    font-size: 0.95rem;
+}
+
+.song-list img {
+    width: 45px;
+    height: 45px;
+    border-radius: 6px;
+    vertical-align: middle;
+    margin-right: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Forms */
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: #fa233b;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background: #d41c30;
+}
+
+/* Player UI Polished */
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.track-art {
+    width: 280px;
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    /* Apple Music uses rounded squares mostly, but user asked for circle before. Let's verify requirement. 
+                           Req 5 says "Dynamic Background" and "Controls Redesign". User didn't revert Vinyl art requirement explicitly but 
+                           usually Apple Music has rounded square art with shadow. 
+                           User Prompt Step 137 said "Circle". Step 215 didn't mention art shape change, only background.
+                           I will stick to the previous "Vinyl" circle style if preferred, OR modern square. 
+                           Let's stick to the previous Cycle (Vinyl) style from Step 137 BUT Step 215 implies "Polished Apple Music". 
+                           Let's see: Step 215 says "Dynamic, premium look". 
+                           Actually, Step 185 user reverted Sidebar. Step 215 is new. 
+                           The previous state had Circle Art. 
+                           Let's keep Circle Art as it was a specific request in 137 and no overrides in 215. */
+    border-radius: 50%;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    margin: 30px 0;
+    border: none;
+    /* Cleaner without border */
+}
+
+/* Rotation Animation */
+.rotate {
+    animation: rotation 10s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.track-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.track-artist {
+    font-size: 1.1rem;
+    color: #ffadb6;
+    /* Lighter Red/Pink for better visibility on dark blur */
+    font-weight: 500;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Sliders (Apple Music Style) */
+.slider_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    max-width: 400px;
+    margin: 25px auto 10px auto;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    margin: 0 10px;
+    padding: 0;
+    /* Reset padding for inputs which was set globally */
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    /* Larger hit area, visual small */
+    width: 20px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    margin-top: -8px;
+    /* Center thumb */
+    border: 6px solid transparent;
+    /* Trick to make visual smaller but hit area big? Or just design: */
+    /* Let's make it standard Apple style: small white distinct thumb */
+    height: 12px;
+    width: 12px;
+    margin-top: -4px;
+    border: none;
+}
+
+input[type=range]:hover::-webkit-slider-thumb {
+    transform: scale(1.2);
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 40px;
+}
+
+.playpause-track i {
+    color: white;
+    font-size: 4rem;
+    transition: transform 0.2s;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+}
+
+.playpause-track:hover i {
+    transform: scale(1.1);
+}
+
+.prev-track i,
+.next-track i {
+    color: white;
+    font-size: 2.5rem;
+    opacity: 1;
+}
+
+.random-track i,
+.repeat-track i {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.2rem;
+}
+
+.randomActive,
+.active {
+    color: #fa233b !important;
+    text-shadow: 0 0 10px rgba(250, 35, 59, 0.6);
+}
+
+/* Back Button */
+.back-btn {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: white;
+    font-size: 1.2rem;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.2);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+/* About / Developer Cards */
+/* Team Container */
+.dev-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* More space between cards */
+    margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+    .dev-container {
+        flex-direction: row;
+        align-items: stretch;
+        /* Cards same height */
+    }
+}
+
+/* Developer Card styling */
+.dev-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    flex: 1;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.dev-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* The Circle Avatar */
+.initials-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fa233b, #4c1d95);
+    /* Apple Red to Deep Purple */
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Typography Overrides */
+.dev-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.role {
+    color: #fa233b;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.dev-bio {
+    color: #b3b3b3;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Distinct Project Overview Section */
+.project-card {
+    background: rgba(0, 0, 0, 0.2);
+    /* Darker contrast */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.project-card h3 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.project-card p {
+    color: #98989d;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.tech-stack-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-tag {
+    background: rgba(250, 35, 59, 0.15);
+    color: #fa233b;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(250, 35, 59, 0.3);
+}

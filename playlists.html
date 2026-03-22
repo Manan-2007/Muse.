@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlists - Muse.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="player">
+        <div class="wrapper">
+            <div class="top-bar">
+                <a href="home.html" class="logo-link">
+                    <h1 class="logo"><span class="logo-red">Muse</span><span class="logo-white">.</span></h1>
+                </a>
+            </div>
+
+            <div class="content-area">
+                <div class="details">
+                    <h2 style="margin-bottom: 20px;">Playlists</h2>
+                </div>
+
+                <div class="grid-container">
+                    <div class="card playlist-card" onclick="playPlaylist('Pop Hits')">
+                        <div class="playlist-art">
+                            <img src="images/voicenotes.jpg">
+                            <img src="images/attention.png">
+                            <img src="images/we_dont_talk_anymore.jpg">
+                            <img src="images/light_switch.jpg">
+                        </div>
+                        <h4>Pop Hits</h4>
+                        <p>Charlie Puth, Dua Lipa</p>
+                    </div>
+
+                    <div class="card playlist-card" onclick="playPlaylist('Retro Rewind')">
+                        <div class="playlist-art">
+                            <img src="images/bad.jpg">
+                            <img src="images/michael_jackson.jpg">
+                            <img src="images/boney_m.jpg">
+                            <img src="images/roots.jpg">
+                        </div>
+                        <h4>Retro Rewind</h4>
+                        <p>Michael Jackson, Boney M.</p>
+                    </div>
+
+                    <div class="card playlist-card" onclick="playPlaylist('Late Night Vibes')">
+                        <div class="playlist-art">
+                            <img src="images/blinding_lights.jpg">
+                            <img src="images/sunflower.jpg">
+                            <img src="images/illuminate.jpg">
+                            <img src="images/thank_u_next.jpg">
+                        </div>
+                        <h4>Late Night Vibes</h4>
+                        <p>The Weeknd, Post Malone, Shawn Mendes</p>
+                    </div>
+
+                    <div class="card playlist-card" onclick="playPlaylist('High Energy')">
+                        <div class="playlist-art">
+                            <img src="images/evolve.jpg">
+                            <img src="images/bones.jpg">
+                            <img src="images/v.jpg">
+                            <img src="images/1989.jpg">
+                        </div>
+                        <h4>High Energy</h4>
+                        <p>Imagine Dragons, Maroon 5</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="nav-bar">
+                <a href="home.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="playlists.html" class="nav-item active">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Playlists</span>
+                </a>
+                <a href="library.html" class="nav-item">
+                    <i class="fas fa-list"></i>
+                    <span>Library</span>
+                </a>
+                <a href="about.html" class="nav-item">
+                    <i class="fas fa-user-friends"></i>
+                    <span>About</span>
+                </a>
+                <a href="login.html" class="nav-item">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Login</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        function playPlaylist(name) {
+            if (name === 'Pop Hits') window.location.href = 'player.html?track=10';
+            if (name === 'Retro Rewind') window.location.href = 'player.html?track=4';
+            if (name === 'Late Night Vibes') window.location.href = 'player.html?track=7';
+            if (name === 'High Energy') window.location.href = 'player.html?track=5';
+        }
+    </script>
+</body>
+
+</html>

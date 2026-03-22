@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muse.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="songs.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="player">
+        <div class="wrapper" style="justify-content: center;">
+            <a href="home.html" class="back-btn"><i class="fas fa-chevron-down"></i></a>
+
+            <div class="details">
+                <div class="now-playing"
+                    style="font-size: 0.7rem; letter-spacing: 2px; color: rgba(255,255,255,0.6); margin-bottom: 10px;">
+                    PLAYING FROM PLAYLIST</div>
+                <div class="track-art"></div>
+                <div class="track-name">Track Name</div>
+                <div class="track-artist">Track Artist</div>
+            </div>
+
+            <div class="slider_container">
+                <div class="current-time">00:00</div>
+                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                <div class="total-duration">00:00</div>
+            </div>
+
+            <div class="buttons">
+                <div class="random-track" onclick="randomTrack()">
+                    <i class="fas fa-random" title="random"></i>
+                </div>
+                <div class="prev-track" onclick="prevTrack()">
+                    <i class="fas fa-backward"></i>
+                </div>
+                <div class="playpause-track" onclick="playpauseTrack()">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <div class="next-track" onclick="nextTrack()">
+                    <i class="fas fa-forward"></i>
+                </div>
+                <div class="repeat-track" onclick="repeatTrack()">
+                    <i class="fas fa-redo" title="repeat"></i>
+                </div>
+            </div>
+
+            <div class="slider_container" style="margin-top: 30px; width: 60%; opacity: 0.7;">
+                <i class="fa fa-volume-down" style="color: white; margin-right: 10px;"></i>
+                <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                <i class="fa fa-volume-up" style="color: white; margin-left: 10px;"></i>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
