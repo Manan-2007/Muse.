@@ -725,3 +725,366 @@ input[type=range]:hover::-webkit-slider-thumb {
     font-weight: 600;
     border: 1px solid rgba(250, 35, 59, 0.3);
 }
+
+/* ============================================
+   HOME PAGE: Greeting Section
+   ============================================ */
+.home-greeting {
+    margin-bottom: 20px;
+}
+
+.home-greeting h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.greeting-sub {
+    font-size: 0.85rem;
+    color: #98989d;
+}
+
+/* Section Headers */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.see-all {
+    font-size: 0.8rem;
+    color: #fa233b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Hero Badge */
+.hero-badge {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(250, 35, 59, 0.85);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    width: fit-content;
+}
+
+/* Recently Played Grid */
+.recent-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.recent-card {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.recent-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.recent-card img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.recent-info {
+    padding: 6px 10px;
+    overflow: hidden;
+}
+
+.recent-info h4 {
+    font-size: 0.75rem;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.recent-info p {
+    font-size: 0.65rem;
+    margin: 0;
+    color: #98989d;
+}
+
+@media (max-width: 400px) {
+    .recent-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   AUTH PAGES: Container & Styling
+   ============================================ */
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.auth-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fa233b, #c71e32);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 8px 25px rgba(250, 35, 59, 0.3);
+}
+
+.auth-icon i {
+    color: white;
+    font-size: 1.8rem;
+}
+
+.auth-title {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.auth-subtitle {
+    font-size: 0.9rem;
+    color: #98989d;
+    margin-bottom: 30px;
+}
+
+/* Input Groups with Icons */
+.input-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-group .input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 0.9rem;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.input-group input {
+    padding-left: 42px;
+    margin-bottom: 0;
+}
+
+/* Auth Options (Remember Me + Forgot) */
+.auth-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #98989d;
+    cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: #fa233b;
+    cursor: pointer;
+}
+
+.remember-me span {
+    color: #98989d;
+}
+
+.forgot-link {
+    color: #fa233b;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+/* Error & Success Messages */
+.auth-error {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.auth-success {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #10b981;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    margin-top: 15px;
+    text-align: left;
+}
+
+/* Divider */
+.auth-divider {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+    gap: 15px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.auth-divider span {
+    color: #666;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.auth-footer {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Shake Animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.4s ease-in-out;
+}
+
+/* ============================================
+   FORGOT PASSWORD: OTP & Steps
+   ============================================ */
+.otp-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.otp-input {
+    width: 48px !important;
+    height: 56px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 0 !important;
+    margin: 0 !important;
+    transition: border-color 0.2s;
+}
+
+.otp-input:focus {
+    outline: none;
+    border-color: #fa233b;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.otp-hint {
+    font-size: 0.75rem;
+    color: #10b981;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Progress Step Dots */
+.forgot-steps {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.step-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    transition: background 0.3s, transform 0.3s;
+}
+
+.step-dot.active {
+    background: #fa233b;
+    transform: scale(1.2);
+    text-shadow: none;
+    color: #fa233b;
+}
+
+/* Button link wrapper (for forgot password success) */
+.btn-link {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-link button {
+    width: 100%;
+    padding: 15px;
+    background: #fa233b;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-link button:hover {
+    background: #d41c30;
+}

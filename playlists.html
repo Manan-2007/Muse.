@@ -21,10 +21,12 @@
 
             <div class="content-area">
                 <div class="details">
-                    <h2 style="margin-bottom: 20px;">Playlists</h2>
+                    <h2 style="margin-bottom: 5px;">Playlists</h2>
+                    <p style="font-size: 0.85rem; margin-bottom: 20px;">Curated collections for every mood</p>
                 </div>
 
                 <div class="grid-container">
+                    <!-- Playlist 1: Pop Hits -->
                     <div class="card playlist-card" onclick="playPlaylist('Pop Hits')">
                         <div class="playlist-art">
                             <img src="images/voicenotes.jpg">
@@ -36,6 +38,7 @@
                         <p>Charlie Puth, Dua Lipa</p>
                     </div>
 
+                    <!-- Playlist 2: Retro Rewind -->
                     <div class="card playlist-card" onclick="playPlaylist('Retro Rewind')">
                         <div class="playlist-art">
                             <img src="images/bad.jpg">
@@ -47,6 +50,7 @@
                         <p>Michael Jackson, Boney M.</p>
                     </div>
 
+                    <!-- Playlist 3: Late Night Vibes -->
                     <div class="card playlist-card" onclick="playPlaylist('Late Night Vibes')">
                         <div class="playlist-art">
                             <img src="images/blinding_lights.jpg">
@@ -55,9 +59,10 @@
                             <img src="images/thank_u_next.jpg">
                         </div>
                         <h4>Late Night Vibes</h4>
-                        <p>The Weeknd, Post Malone, Shawn Mendes</p>
+                        <p>The Weeknd, Post Malone</p>
                     </div>
 
+                    <!-- Playlist 4: High Energy -->
                     <div class="card playlist-card" onclick="playPlaylist('High Energy')">
                         <div class="playlist-art">
                             <img src="images/evolve.jpg">
@@ -67,6 +72,54 @@
                         </div>
                         <h4>High Energy</h4>
                         <p>Imagine Dragons, Maroon 5</p>
+                    </div>
+
+                    <!-- Playlist 5: Chill Acoustics -->
+                    <div class="card playlist-card" onclick="playPlaylist('Chill Acoustics')">
+                        <div class="playlist-art">
+                            <img src="images/illuminate.jpg">
+                            <img src="images/the_way_i_am.jpg">
+                            <img src="images/see_you_again.jpg">
+                            <img src="images/harry_house.jpg">
+                        </div>
+                        <h4>Chill Acoustics</h4>
+                        <p>Shawn Mendes, Charlie Puth</p>
+                    </div>
+
+                    <!-- Playlist 6: Workout Mix -->
+                    <div class="card playlist-card" onclick="playPlaylist('Workout Mix')">
+                        <div class="playlist-art">
+                            <img src="images/bones.jpg">
+                            <img src="images/roots.jpg">
+                            <img src="images/evolve.jpg">
+                            <img src="images/v.jpg">
+                        </div>
+                        <h4>Workout Mix</h4>
+                        <p>Imagine Dragons, Flo Rida</p>
+                    </div>
+
+                    <!-- Playlist 7: Throwback Party -->
+                    <div class="card playlist-card" onclick="playPlaylist('Throwback Party')">
+                        <div class="playlist-art">
+                            <img src="images/boney_m.jpg">
+                            <img src="images/bad.jpg">
+                            <img src="images/michael_jackson.jpg">
+                            <img src="images/roots.jpg">
+                        </div>
+                        <h4>Throwback Party</h4>
+                        <p>Boney M., Michael Jackson</p>
+                    </div>
+
+                    <!-- Playlist 8: Heartbreak Anthems -->
+                    <div class="card playlist-card" onclick="playPlaylist('Heartbreak Anthems')">
+                        <div class="playlist-art">
+                            <img src="images/we_dont_talk_anymore.jpg">
+                            <img src="images/thank_u_next.jpg">
+                            <img src="images/attention.png">
+                            <img src="images/see_you_again.jpg">
+                        </div>
+                        <h4>Heartbreak Anthems</h4>
+                        <p>Charlie Puth, Ariana Grande</p>
                     </div>
                 </div>
             </div>
@@ -88,21 +141,28 @@
                     <i class="fas fa-user-friends"></i>
                     <span>About</span>
                 </a>
-                <a href="login.html" class="nav-item">
+                <a href="login.html" class="nav-item" id="navLoginBtn">
                     <i class="fas fa-user-circle"></i>
-                    <span>Login</span>
+                    <span id="navLoginText">Login</span>
                 </a>
             </nav>
         </div>
     </div>
 
+    <script src="auth.js"></script>
     <script>
         function playPlaylist(name) {
             if (name === 'Pop Hits') window.location.href = 'player.html?track=10';
             if (name === 'Retro Rewind') window.location.href = 'player.html?track=4';
             if (name === 'Late Night Vibes') window.location.href = 'player.html?track=7';
             if (name === 'High Energy') window.location.href = 'player.html?track=5';
+            if (name === 'Chill Acoustics') window.location.href = 'player.html?track=18';
+            if (name === 'Workout Mix') window.location.href = 'player.html?track=9';
+            if (name === 'Throwback Party') window.location.href = 'player.html?track=14';
+            if (name === 'Heartbreak Anthems') window.location.href = 'player.html?track=19';
         }
+
+        AuthManager.updateNavLogin();
     </script>
 </body>
 

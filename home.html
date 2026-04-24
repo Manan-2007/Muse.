@@ -7,6 +7,7 @@
     <title>Home - Muse.</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -20,16 +21,27 @@
 
             <div class="content-area">
 
+                <!-- Greeting -->
+                <div class="home-greeting" id="greeting">
+                    <h2>Good Evening</h2>
+                    <p class="greeting-sub" id="greetingUser">Welcome back</p>
+                </div>
+
+                <!-- Hero Banner -->
                 <div class="hero-section" onclick="window.location.href='player.html?track=7'">
-                    <p
-                        style="color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 5px;">
-                        Artist of the Month</p>
+                    <div class="hero-badge">
+                        <i class="fas fa-fire"></i> Artist of the Month
+                    </div>
                     <h1>The Weeknd</h1>
                     <p style="color: white; font-size: 0.9rem;">Listen to the new hits.</p>
                     <img src="images/blinding_lights.jpg" class="hero-img">
                 </div>
 
-                <h3 style="margin-left: 5px; margin-bottom: 15px;">Made For You</h3>
+                <!-- Made For You -->
+                <div class="section-header">
+                    <h3>Made For You</h3>
+                    <a href="library.html" class="see-all">See All</a>
+                </div>
                 <div class="horizontal-scroll">
                     <div class="card scroll-card" onclick="window.location.href='player.html?track=16'">
                         <img src="images/sunflower.jpg" alt="Sunflower">
@@ -51,10 +63,53 @@
                         <h4>Low</h4>
                         <p>Flo Rida</p>
                     </div>
+                    <div class="card scroll-card" onclick="window.location.href='player.html?track=5'">
+                        <img src="images/evolve.jpg" alt="Believer">
+                        <h4>Believer</h4>
+                        <p>Imagine Dragons</p>
+                    </div>
                 </div>
 
-                <div style="margin-top: 30px;">
-                    <h3 style="margin-left: 5px; margin-bottom: 15px;">Quick Links</h3>
+                <!-- Recently Played -->
+                <div class="section-header" style="margin-top: 25px;">
+                    <h3>Recently Played</h3>
+                </div>
+                <div class="recent-grid">
+                    <div class="recent-card" onclick="window.location.href='player.html?track=1'">
+                        <img src="images/harry_house.jpg" alt="As It Was">
+                        <div class="recent-info">
+                            <h4>As It Was</h4>
+                            <p>Harry Styles</p>
+                        </div>
+                    </div>
+                    <div class="recent-card" onclick="window.location.href='player.html?track=6'">
+                        <img src="images/1989.jpg" alt="Blank Space">
+                        <div class="recent-info">
+                            <h4>Blank Space</h4>
+                            <p>Taylor Swift</p>
+                        </div>
+                    </div>
+                    <div class="recent-card" onclick="window.location.href='player.html?track=9'">
+                        <img src="images/bones.jpg" alt="Bones">
+                        <div class="recent-info">
+                            <h4>Bones</h4>
+                            <p>Imagine Dragons</p>
+                        </div>
+                    </div>
+                    <div class="recent-card" onclick="window.location.href='player.html?track=14'">
+                        <img src="images/boney_m.jpg" alt="Rasputin">
+                        <div class="recent-info">
+                            <h4>Rasputin</h4>
+                            <p>Boney M.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div style="margin-top: 25px;">
+                    <div class="section-header">
+                        <h3>Quick Links</h3>
+                    </div>
 
                     <a href="library.html" class="action-row">
                         <i class="fas fa-list action-icon"></i>
@@ -93,13 +148,35 @@
                     <i class="fas fa-user-friends"></i>
                     <span>About</span>
                 </a>
-                <a href="login.html" class="nav-item">
+                <a href="login.html" class="nav-item" id="navLoginBtn">
                     <i class="fas fa-user-circle"></i>
-                    <span>Login</span>
+                    <span id="navLoginText">Login</span>
                 </a>
             </nav>
         </div>
     </div>
+
+    <script src="auth.js"></script>
+    <script>
+        // Dynamic greeting based on time of day
+        (function () {
+            const hour = new Date().getHours();
+            const greetEl = document.querySelector('#greeting h2');
+            if (hour < 12) greetEl.textContent = 'Good Morning';
+            else if (hour < 17) greetEl.textContent = 'Good Afternoon';
+            else greetEl.textContent = 'Good Evening';
+
+            // Show user name if logged in
+            const user = AuthManager.getCurrentUser();
+            const greetUser = document.getElementById('greetingUser');
+            if (user) {
+                greetUser.textContent = 'Welcome back, ' + user.username;
+            }
+
+            // Update nav login button
+            AuthManager.updateNavLogin();
+        })();
+    </script>
 </body>
 
 </html>
