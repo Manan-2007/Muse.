@@ -22,7 +22,7 @@
 
 ## ✦ What is Muse.?
 
-**Muse.** is a modern, responsive, multi-page music player built entirely with vanilla HTML, CSS, and JavaScript — no frameworks, no dependencies. It replicates the premium feel of native apps like Apple Music, featuring a dynamic glassmorphism UI, a fully functional audio engine, and fluid transitions between pages.
+**Muse.** is a modern, responsive, multi-page music player built entirely with vanilla HTML, CSS, and JavaScript — no frameworks, no dependencies. It replicates the premium feel of native apps like Apple Music, featuring a dynamic glassmorphism UI, a fully functional audio engine, and fluid transitions between pages
 
 > Built as a Web Development course project by **Arjun Sheoran** & **Atharv Bains**.
 
